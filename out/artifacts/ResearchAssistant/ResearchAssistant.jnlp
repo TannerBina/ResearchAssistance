@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ResearchAssistant.jnlp">
+  <information>
+    <title>Research Assistant</title>
+    <vendor>Tanner Bina</vendor>
+    <description>ResearchAssistant</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ResearchAssistant.jar" size="8806" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="base.Main"  name="ResearchAssistant" />
+  <update check="background"/>
+</jnlp>
