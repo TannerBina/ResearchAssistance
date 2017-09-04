@@ -1,5 +1,7 @@
 # ResearchAssistance
 
+NOTE CURRENT UPLOAD IS NOT WORKING CORRECTLY DUE TO AN API UPDATE. WILL UPLOAD WORKING VERSION AS SOON AS POSSIBLE.
+
 Final Product
 ResearchAssistance is a rudimentary search engine that is designed specifically for looking up academic research papers on particular
 topics. It polls different online API's to find related papers to your search. Each paper is then given a research assistance rating
