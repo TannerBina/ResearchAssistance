@@ -77,10 +77,16 @@ public class Controller {
         docs.get(0).displayDoc(articleBox);
     }
 
+    /*
+    Adds a document to the list of current documents
+     */
     public static void addDoc(Document toAdd){
-        System.out.println("Adding doc");
+        //if the document is blank, do nothing
         if (! toAdd.isInitialized()) return;
+
+        //attempt to add in correct place
         boolean added = false;
+        //look through all further documents for where to put it, if its rating is high enough
         for (int i = currentDocNum+1; i < docs.size(); i++){
             if (docs.get(i).getRating() < toAdd.getRating()){
                 try {
@@ -93,18 +99,22 @@ public class Controller {
                 break;
             }
         }
+        //if it has not been added for some reason, add to end.
         if (!added){
             docs.add(toAdd);
         }
-
-        System.out.println("DOC ADDED");
-        System.out.println(docs.size());
     }
 
+    /*
+    Updates the page label
+     */
     private void updatePageLabel(){
         pageLabel.setText("Article " + currentDocNum + " of " + docs.size());
     }
 
+    /*
+    Loads the next document in the list of docs
+     */
     @FXML
     private void loadNextDoc(){
         if (currentDocNum < docs.size()){
@@ -114,6 +124,9 @@ public class Controller {
         }
     }
 
+    /*
+    Load the previous document in the list
+     */
     @FXML
     private void loadPrevDoc(){
         if (currentDocNum > 1){
@@ -123,9 +136,13 @@ public class Controller {
         }
     }
 
+    /*
+    Open the web page for the current doc
+     */
     @FXML
     private void openDoc(){
         if (!docs.isEmpty()) {
+            //open the url given with the doc
             if (Desktop.isDesktopSupported()){
                 try {
                     Desktop.getDesktop().browse

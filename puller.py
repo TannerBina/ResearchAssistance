@@ -41,6 +41,7 @@ class Document:
             authors += " : "
             authors+=auth.name
         authors = authors.encode(encoding='UTF-8',errors='replace')
+        #print docs with starting and ending tags
         print("__START__")
         print("__RATING__b'%.3f'__" % self.rating)
         print("__CITATIONS__b'%a'__" % self.citations)
@@ -58,27 +59,34 @@ class Document:
 
     #generates the rating for the documents
     def generateRating(self, search):
+        #start with rating of one
         self.rating = 1;
-        
+
+        #for all title match increase
         if (self.title.decode().lower().count(search.lower()+" ") > 0):
             self.rating += 10
         elif (self.title.decode().lower().count(search.lower()) > 0):
-            self.rating += 5            
+            self.rating += 10            
 
+        #increase by 5 if match of keyword
         if (self.keywords.lower().count(search.lower()+",") > 0):
-            self.rating += 10
+            self.rating += 5
         elif (self.keywords.lower().count(search.lower()) > 0):
             self.rating += 5
-            
+
+        #increase by number of uses of search in abstract    
         if (self.abstract.decode().lower().count(search.lower()) > 0):
             self.rating += self.abstract.decode().lower().count(search.lower())
 
+        #multiply per 250 downloads
         if (self.downloads > 0):
             self.rating *= (1 + self.downloads/250.0)
-            
+
+        #multiply per 10 downloads    
         if (self.citations > 0):
             self.rating *= (1 + citations/10.0)
 
+        #multiply by square of journal impact
         self.rating = self.rating * self.journalImpact * self.journalImpact
 
     #sets the data of the document
@@ -96,6 +104,7 @@ class Document:
             auth.name = a['creator']
             self.authorsList.append(auth)
 
+        #run scraper scripts
         self.journalId = journalId
         if self.journalId is "":
             self.journalImpact = 1

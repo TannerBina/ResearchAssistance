@@ -2,11 +2,14 @@ import urllib.request
 import sys
 from bs4 import BeautifulSoup
 
+#scrape a given url
 def scrapeSite(url):
     page = urllib.request.urlopen(url)
     return BeautifulSoup(page, "html.parser")
 
+#scrape the citations
 def getCitations(data):
+    #find citation count
     citRes = data.find(id='citations-count-number')
     if citRes is None:
         citations = 0
@@ -14,6 +17,7 @@ def getCitations(data):
         citations = citRes.contents[0]
     return citations
 
+#get number of downloads
 def getDownloads(data):
     downRes = data.find(class_="article-metrics__views")
     if downRes is None:
@@ -22,6 +26,7 @@ def getDownloads(data):
         downloads = downRes.contents[0]
     return downloads
 
+#get keyword list
 def getKeywords(data):
     keyRes = data.findAll('script')[2]
     if keyRes is None:
@@ -39,6 +44,7 @@ def getKeywords(data):
             keywords = keywords[0:len(keywords)-2]
     return keywords
 
+#get the impact rating of the journal
 def getJournalData(journalLink):
     data = scrapeSite(journalLink)
     imprData = (data.find(class_="ListStack ListStack--float")).findAll('span')

@@ -11,6 +11,7 @@ import java.util.Scanner;
  * Created by Tanner on 1/17/2017.
  */
 public class Document {
+    //all data fields for a document
     private String rating;
     private String citations;
     private String keywords;
@@ -24,6 +25,7 @@ public class Document {
     private String abst;
     private List<Author> authList;
 
+    //iniatilize a filled document
     public Document(String rating, String citations, String keywords, String ident, String url, String title, String pubName,
                     String publisher, String pubDate, String genre, String abst,
                     String authors){
@@ -38,6 +40,8 @@ public class Document {
         this.pubDate = pubDate;
         this.genre = genre;
         this.abst = abst;
+
+        //fill the author list by scanning through and seperating
         authList = new LinkedList<>();
         try {
             Scanner s = new Scanner(authors);
@@ -57,18 +61,22 @@ public class Document {
         }
     }
 
+    //return rating
     public double getRating(){
         return Double.parseDouble(rating);
     }
 
+    //return url
     public String getUrl() {
         return url;
     }
 
+    //check if it is filled or all null
     public boolean isInitialized(){
         return (rating != null && ident != null && title != null && pubDate != null);
     }
 
+    //builds the citation for the document
     public String getCitation(){
         StringBuilder sb = new StringBuilder();
         if (authList.size() != 0){
@@ -90,6 +98,7 @@ public class Document {
         return sb.toString();
     }
 
+    //return string of doc
     public String toString(){
         StringBuilder string = new StringBuilder();
         string.append("Research Assistant Rating: ");
@@ -150,6 +159,7 @@ public class Document {
         return string.toString();
     }
 
+    //display the doc in a given text area
     public void displayDoc(TextArea area){
         StringBuilder string = new StringBuilder();
         string.append("Research Assistant Rating: ");
