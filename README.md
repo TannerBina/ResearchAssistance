@@ -3,6 +3,7 @@
 NOTE CURRENT UPLOAD IS NOT WORKING CORRECTLY DUE TO AN API UPDATE. WILL UPLOAD WORKING VERSION AS SOON AS POSSIBLE.
 
 Final Product
+
 ResearchAssistance is a rudimentary search engine that is designed specifically for looking up academic research papers on particular
 topics. It polls different online API's to find related papers to your search. Each paper is then given a research assistance rating
 representing how relevant the given paper is, how well known the journal it is published in is, as well as who the author is. The user
@@ -13,6 +14,7 @@ The polling script and crawler are written in python while the central app is wr
 are then analyzed using a rating algorithm by the java program. They are then presented in the most relevant order to the user.
 
 Current Features
+
 Multi thread API polling to Springer Database.
 Crawler activity to find journal impact rating.
 Algorithmic determination of research assistance rating.
@@ -21,6 +23,7 @@ Presentation of abstract, citation, title and authors to user.
 Link to open web page with article online.
 
 Upcoming Features
+
 Bug fixes to thread termination.
 Improve thread polling algorithms.
 Alter the way scripts run and data is retrieved from them.
@@ -31,6 +34,7 @@ Increase number of API's polled.
 Increase search accuracy.
 
 Current Bugs
+
 Threads do not terminate on exit.
 Long startup thread time to begin search.
 Internet and computer slowdown during search.
