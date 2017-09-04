@@ -90,6 +90,66 @@ public class Document {
         return sb.toString();
     }
 
+    public String toString(){
+        StringBuilder string = new StringBuilder();
+        string.append("Research Assistant Rating: ");
+        string.append(rating);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Title: ");
+        string.append(title);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Genre: ");
+        string.append(genre);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Keywords: ");
+        string.append(keywords);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Authors");
+        for (Author auth: authList){
+            string.append(": ");
+            string.append(auth.getName());
+        }
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Publication Name: ");
+        string.append(pubName);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Publisher: ");
+        string.append(publisher);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Publication Date: ");
+        string.append(pubDate);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Identifier: ");
+        string.append(ident);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("Abstract: ");
+        string.append(abst);
+        string.append('\n');
+        string.append('\n');
+
+        string.append("APA Citation: ");
+        string.append(getCitation());
+        return string.toString();
+    }
+
     public void displayDoc(TextArea area){
         StringBuilder string = new StringBuilder();
         string.append("Research Assistant Rating: ");

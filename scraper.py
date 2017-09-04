@@ -32,7 +32,8 @@ def getKeywords(data):
         if (startIndex == 7):
             keywords = "None"
         else:
-            endIndex = contents.find('Country')
+            #this is sorta sketchy and I want to find a better way to do it
+            endIndex = contents.find('Webtrekk')
             keywords = contents[startIndex+3:endIndex-1]
             keywords = keywords.rstrip()
             keywords = keywords[0:len(keywords)-2]

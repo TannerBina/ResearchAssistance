@@ -41,18 +41,20 @@ class Document:
             authors += " : "
             authors+=auth.name
         authors = authors.encode(encoding='UTF-8',errors='replace')
-        print('%.3f' % self.rating)
-        print(self.citations)
-        print(self.keywords)
-        print(self.identifier)
-        print(self.url)
-        print(self.title)
-        print(self.pubName)
-        print(self.publisher)
-        print(self.pubDate)
-        print(self.genre)
-        print(self.abstract)
-        print(authors[3:])
+        print("__START__")
+        print("__RATING__b'%.3f'__" % self.rating)
+        print("__CITATIONS__b'%a'__" % self.citations)
+        print("__KEYWORDS__b%a__" % self.keywords)
+        print('__IDENTIFIER__%a__' % self.identifier)
+        print('__URL__%a__' % self.url)
+        print('__TITLE__%a__' % self.title)
+        print('__PUBLICATIONNAME__%a__' % self.pubName)
+        print('__PUBLISHER__%a__' % self.publisher)
+        print('__PUBDATE__%a__' % self.pubDate)
+        print('__GENRE__%a__' % self.genre)
+        print('__ABSTRACT__ %a__' % self.abstract)
+        print('__AUTHORS__ %a__' % authors[3:])
+        print("__END__")
 
     #generates the rating for the documents
     def generateRating(self, search):

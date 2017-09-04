@@ -78,6 +78,7 @@ public class Controller {
     }
 
     public static void addDoc(Document toAdd){
+        System.out.println("Adding doc");
         if (! toAdd.isInitialized()) return;
         boolean added = false;
         for (int i = currentDocNum+1; i < docs.size(); i++){
@@ -95,6 +96,9 @@ public class Controller {
         if (!added){
             docs.add(toAdd);
         }
+
+        System.out.println("DOC ADDED");
+        System.out.println(docs.size());
     }
 
     private void updatePageLabel(){
