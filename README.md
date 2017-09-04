@@ -26,9 +26,11 @@ Increase crawler ability to crawl to other work by authors.
 Use other work relevance in RA rating.
 List relevant author work in report.
 Increase number of API's polled.
+Increase search accuracy.
 
 Current Bugs
 Threads do not terminate on exit.
 Long startup thread time to begin search.
+Internet and computer slowdown during search.
 Some bugs in thread info return.
 Bugs related to non-alphabetical symbols in abstract/title.
