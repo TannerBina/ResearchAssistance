@@ -53,8 +53,8 @@ class Document:
         print('__PUBLISHER__%a__' % self.publisher)
         print('__PUBDATE__%a__' % self.pubDate)
         print('__GENRE__%a__' % self.genre)
-        print('__ABSTRACT__ %a__' % self.abstract)
-        print('__AUTHORS__ %a__' % authors[3:])
+        print('__ABSTRACT__%a__' % self.abstract)
+        print('__AUTHORS__%a__' % authors[3:])
         print("__END__")
 
     #generates the rating for the documents

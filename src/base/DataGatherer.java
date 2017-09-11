@@ -89,7 +89,6 @@ public class DataGatherer implements Runnable{
                     String next = scan.nextLine();
                     startIndex = next.indexOf("__b'");
                     endIndex = next.indexOf("'__");
-                    System.out.println(next);
 
                     if (startIndex != -1 && endIndex != -1){
                         //get tag and res
