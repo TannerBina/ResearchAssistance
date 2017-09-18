@@ -14,7 +14,6 @@ are then analyzed using a rating algorithm by the java program. They are then pr
 Current Features
 
 Multi thread API polling to Springer Database.
-
 Crawler activity to find journal impact rating.
 Algorithmic determination of research assistance rating.
 Rating determined by downloads, citations, relevance and journal impact.
