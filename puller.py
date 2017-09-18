@@ -143,22 +143,35 @@ def parseData(data):
 
     return documents
 
+def getTerms(fileName):
+    with open(fileName, 'r') as myfile:
+        data=myfile.readlines()
+
+    data = [d.replace('\n', '') for d in data]
+    return data
+
 #main code
 #create search string from args
+unimportantTerms = getTerms("unimportant.txt")
+
 start = sys.argv[1]
 numRes = int(sys.argv[2])
 
 s = ""
 
 for num in range(3, len(sys.argv)):
-    s += " "
-    s += sys.argv[num]
+    if (unimportantTerms.count(sys.argv[num].lower()) == 0):
+        s += " "
+        s += sys.argv[num]
 
 #trim first space
 s = s[1:]
 docList = []
 
-#add title searches
+#set string to title capitalization
+s = s.title()
+
+#add keyword searches
 docList.extend(parseData(submitRequest("keyword:", s, start, numRes)))
 #if not enough, add content searches
 if (len(docList) < numRes):
